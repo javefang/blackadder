@@ -36,7 +36,8 @@ CLICK_CXX_UNPROTECT
 #include <click/cxxunprotect.h>
 #define TASK_IS_SCHEDULED 0
 #else
-#include <queue>
+//#include <queue>
+#include "myqueue.hh"
 #include <click/cxxprotect.h>
 
 CLICK_CXX_PROTECT
@@ -148,7 +149,8 @@ public:
 #endif
     /** a queue (from STL to use only in user space) that holds the packets to be sent to an application via the netlink socket.
      */
-    std::queue <WritablePacket *> out_buf_queue;
+  myqueue out_buf_queue;
+  //std::queue <WritablePacket *> out_buf_queue;
 #endif
 };
 
