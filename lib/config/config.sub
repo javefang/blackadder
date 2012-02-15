@@ -1444,6 +1444,9 @@ case $os in
 		;;
         -nacl*)
 	        ;;
+	-androideabi)
+		os=-androideabi
+		;;		
 	-none)
 		;;
 	*)
