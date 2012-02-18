@@ -81,7 +81,6 @@ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(includedir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 libblackadder_la_LIBADD =
 am__objects_1 = libblackadder_la-blackadder.lo \
-	libblackadder_la-nb_blackadder.lo \
 	libblackadder_la-bitvector.lo
 am__objects_2 = $(am__objects_1)
 am_libblackadder_la_OBJECTS = $(am__objects_2)
@@ -293,7 +292,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-NAMES = blackadder nb_blackadder bitvector
+NAMES = blackadder bitvector #nb_blackadder
 HDRS = $(NAMES:=.hpp)
 SRCS = $(NAMES:=.cpp)
 
@@ -403,7 +402,6 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libblackadder_la-bitvector.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libblackadder_la-blackadder.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libblackadder_la-nb_blackadder.Plo@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -432,13 +430,6 @@ libblackadder_la-blackadder.lo: blackadder.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='blackadder.cpp' object='libblackadder_la-blackadder.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libblackadder_la_CXXFLAGS) $(CXXFLAGS) -c -o libblackadder_la-blackadder.lo `test -f 'blackadder.cpp' || echo '$(srcdir)/'`blackadder.cpp
-
-libblackadder_la-nb_blackadder.lo: nb_blackadder.cpp
-@am__fastdepCXX_TRUE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libblackadder_la_CXXFLAGS) $(CXXFLAGS) -MT libblackadder_la-nb_blackadder.lo -MD -MP -MF $(DEPDIR)/libblackadder_la-nb_blackadder.Tpo -c -o libblackadder_la-nb_blackadder.lo `test -f 'nb_blackadder.cpp' || echo '$(srcdir)/'`nb_blackadder.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/libblackadder_la-nb_blackadder.Tpo $(DEPDIR)/libblackadder_la-nb_blackadder.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='nb_blackadder.cpp' object='libblackadder_la-nb_blackadder.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libblackadder_la_CXXFLAGS) $(CXXFLAGS) -c -o libblackadder_la-nb_blackadder.lo `test -f 'nb_blackadder.cpp' || echo '$(srcdir)/'`nb_blackadder.cpp
 
 libblackadder_la-bitvector.lo: bitvector.cpp
 @am__fastdepCXX_TRUE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libblackadder_la_CXXFLAGS) $(CXXFLAGS) -MT libblackadder_la-bitvector.lo -MD -MP -MF $(DEPDIR)/libblackadder_la-bitvector.Tpo -c -o libblackadder_la-bitvector.lo `test -f 'bitvector.cpp' || echo '$(srcdir)/'`bitvector.cpp
@@ -925,7 +916,7 @@ uninstall-am: uninstall-includeHEADERS uninstall-libLTLIBRARIES
 install-exec-hook:
 	test "$(libdir)" != "/usr/lib" -a -e /usr/lib/libblackadder.a && rm -fv /usr/lib/libblackadder.a || true # XXX
 	test "$(includedir)" != "/usr/include" -a -e /usr/include/blackadder.hpp && rm -fv /usr/include/blackadder.hpp || true # XXX
-	test "$(includedir)" != "/usr/include" -a -e /usr/include/nb_blackadder.hpp && rm -fv /usr/include/nb_blackadder.hpp || true # XXX
+#	test "$(includedir)" != "/usr/include" -a -e /usr/include/nb_blackadder.hpp && rm -fv /usr/include/nb_blackadder.hpp || true # XXX
 	test "$(includedir)" != "/usr/include" -a -e /usr/include/bitvector.hpp && rm -fv  /usr/include/bitvector.hpp || true # XXX
 	test -n "$(LDCONFIG)" -a "$(libdir)" = "/usr/local/lib" && $(LDCONFIG) /usr/local/lib || true # XXX
 
