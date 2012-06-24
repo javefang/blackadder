@@ -13,7 +13,7 @@ export LDFLAGS="-lgnustl_shared -shared" # must specify -shared to build the sou
 --host=arm-linux-androideabi \
 --with-click="$CLICK_PREFIX" \
 --prefix="$CLICK_PREFIX" \
-CXXFLAGS="-fno-rtti -fno-exceptions -g"
+CXXFLAGS="-fno-rtti -fno-exceptions"
 
 # must call make while LDFLAGS are set, otherwise gnustl will not be invoked
 make -j2
