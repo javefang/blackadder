@@ -11,7 +11,7 @@
  *
  * See LICENSE and COPYING for more details.
  */
-
+// test
 #include "nb_blackadder.hpp"
 
 NB_Blackadder* NB_Blackadder::m_pInstance = NULL;
@@ -53,8 +53,8 @@ void defaultCallback(Event *ev) {
 
 void NB_Blackadder::signal_handler(int sig) {
     (void) signal(SIGINT, SIG_DFL);
-    pthread_cancel(selector_thread);
-    pthread_cancel(worker_thread);
+    //pthread_cancel(selector_thread);
+    //pthread_cancel(worker_thread);
 }
 
 void *NB_Blackadder::worker(void *arg) {
@@ -261,8 +261,8 @@ NB_Blackadder::~NB_Blackadder() {
         pthread_cond_wait(&queue_overflow_cond, &selector_mutex);
     }
     pthread_mutex_unlock(&selector_mutex);
-    pthread_cancel(worker_thread);
-    pthread_cancel(selector_thread);
+    //pthread_cancel(worker_thread);
+    //pthread_cancel(selector_thread);
     if (sock_fd != -1) {
         close(sock_fd);
         cout << "NB_Blackadder Library: Closed netlink socket" << endl;

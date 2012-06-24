@@ -4,6 +4,7 @@ export CXX="arm-linux-androideabi-g++"
 
 ./configure \
 --host=arm-linux-androideabi \
+--prefix=/data/click \
 CXXFLAGS="-fno-rtti -fno-exceptions -g" \
 LDFLAGS="-lgnustl_shared" \
 
